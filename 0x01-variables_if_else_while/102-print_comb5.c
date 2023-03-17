@@ -10,31 +10,23 @@
 int main(void)
 {
 
-int A[] = {'0', '0', '0', '1'};
-int i;
-while (1)
+int i, j;
+for (i = 0; i <= 98; ++i)
 {
-putchar(A[0]);
-putchar(A[1]);
+for (j = i + 1; j <= 99; j++)
+{
+putchar('0' + i / 10);
+putchar('0' + i % 10);
 putchar(' ');
-putchar(A[2]);
-putchar(A[3]);
-if (A[0] == '9' && A[1] == '8' && A[2] == '9' && A[3] == '9')
-{
+putchar('0' + j / 10);
+putchar('0' + j % 10);
+if (i == 98 && j == 99)
 break;
-}
 putchar(',');
 putchar(' ');
-for (i = 3; i >= 0; i--)
-{
-if (A[i] < '9')
-{
-break;
 }
-A[i] = '0';
 }
-A[i]++;
-}
+
 putchar('\n');
 return (0);
 }
